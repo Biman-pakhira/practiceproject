@@ -3,23 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do</title>
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="heading">
-        <h1>No Device Selected</h1>
+        <h1>To-Do List </h1>
     </div>
-    <div class="div1">
-        <input type="text" name="task" id="inputask">
-     </div>
-    <div class="div2">
-        <select name="card" id="card">
-            <option value="sprdermancard">SpiderMan</option>
-            <option value="Dragon_BallZ">Dragon_BallZ</option>
-            <option value="cricket">cricket</option>
-            <option value="football">football</option>
-            <option value="poweRangers">poweRangers</option>
-        </select>
+    <form>
+        <div class="addDiv">
+                <input type="text" name="task" id="inputask" placeholder="Item Name">
+                <input type="date" name="date" id="date" placeholder="Deadline">
+                <select name="Priority" id="Priority">
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+                <div id="btn" >Add Item</div>
+                <button type="submit" id="submit" display="none"></button>
+         </div>
+    </form>
+    <div class="TodaysTodo">
+
+    </div>
+    <div class="futureToDo">
+
+    </div>
+    <div class="completedTodo">
+
     </div>
 
 
