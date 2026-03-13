@@ -48,7 +48,7 @@ body{
 #submit{
     display: none;
 }
-.main .TodaysTodo{
+.main .TodaysTodo, .futureToDo, .completedTodo{
     /* background-color: aliceblue !important; */
     display: grid;
     gap: 8px !important;
@@ -64,12 +64,14 @@ body{
     padding: 10px;
     gap: 10px;
     text-transform: capitalize;
+    border-radius: 10px;
 }
 .inputask, .date, .Priority{
     width: 10%;
     max-width: 50%;
     padding: 10px;
-    /* border: 2px solid black; */
+    font: 1.5em sans-serif;
+
 }
 
 .bttn{
@@ -79,11 +81,6 @@ body{
     align-items: center;
     /* border-radius: 50%; */
 }
-.inputask{
-    /* font-size: 20px; */
-    font: 1.5em sans-serif;
-
-}
 .fas {
   color: red;
   font-size: 24px;
@@ -91,4 +88,42 @@ body{
   /* display: flex; */
   /* justify-content: center; */
   /* align-items: center; */
+}
+/* .boxemoji::before{ */
+    /* content: '⬜'; */
+/* } */
+/* .boxemoji::after{ */
+    /* content: '✅'; */
+/* } */
+
+.completedTodo .taskdiv{
+    border: 2px solid #222;
+    border-radius: 10px;
+    text-transform: capitalize;
+    gap: 10px;
+    padding: 5px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    
+}
+.completedTodo .taskdiv .boxemoji{
+    font: 1.5em sans-serif;
+}
+
+.TodaysTodo .Priority-High, .futureToDo .Priority-High{
+    font: 1.5em sans-serif;
+    color: red;
+}
+
+.TodaysTodo .Priority-Medium, .futureToDo .Priority-Medium{
+    font: 1.5em sans-serif;
+    color: rgb(132, 86, 0);
+}
+
+.TodaysTodo .Priority-Low, .futureToDo .Priority-Low {
+    font: 1.5em sans-serif;    
+    color: yellow;
 }
