@@ -26,7 +26,7 @@ form.addEventListener("submit", (dtls)=>{
         inputask.classList.add("inputask");
         inputask.innerHTML=`${taskname}`
         taskdiv.appendChild(inputask);
-
+        
         let date = document.createElement("div");
         date.classList.add("date");
         date.innerHTML = `${taskedate}`
@@ -37,16 +37,18 @@ form.addEventListener("submit", (dtls)=>{
         Priority.innerHTML=`${Prty.value}`;
         taskdiv.appendChild(Priority); 
         
-        let bttn = document.createElement("div");
-        bttn.classList.add("bttn");
-        bttn.innerHTML = "delete";
+        let bttn = document.createElement("i");
+        bttn.classList.add("fas", "fa-trash");
+        // bttn.innerHTML = "delete";
         taskdiv.appendChild(bttn);
-
+        
         bttn.addEventListener("click", ()=>{
             taskdiv.style.display="none";
         })        
-
-        TodaysTodo.appendChild(taskdiv)
-    }else alert("fill properly")
+        
+        TodaysTodo.appendChild(taskdiv);
+        input[0].value='';
+        input[1].value = '';
+    }else alert("fill properly");
 })
 
