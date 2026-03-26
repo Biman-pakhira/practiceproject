@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="main">
+        <div class="heading">
+                <h1>To-Do List </h1>
+            </div>
+            <form>
+                <div class="addDiv">
+                        <input type="text" name="task" id="inputask" placeholder="Item Name">
+                        <input type="date" name="date" id="date" placeholder="Deadline">
+                        <select name="Priority" id="Priority">
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                        <div id="btn" >Add Item</div>
+                        <button type="submit" id="submit" display="none"></button>
+                 </div>
+            </form>
+            <div class="TodaysTodo">
+                <h1>Today's To Do</h1>
+            </div>
+            <div class="futureToDo">
+                <h1>Future To Do</h1>
+            </div>
+            <div class="completedTodo">
+                <h1>completed Task</h1>
+            </div>
+        </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

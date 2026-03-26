@@ -1,0 +1,36 @@
+.card {
+    width: 280px;
+    height: 350px;
+    border: 1px solid black;
+    border-radius: 16px;
+    position: relative; /* Anchor for the text */
+    overflow: hidden;    /* Clips the image and gradient to the corners */
+    object-fit: cover;
+}
+.img{
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Removed z-index: -1; It's safer to let it stay at 0 */
+}
+
+.profileDatails {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    
+    /* This gradient starts transparent and gets darker at the bottom */
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 100%);
+    
+    color: aliceblue;
+    z-index: 10;
+}
+.profileDatails p{
+    font-size: 10px;
+}
