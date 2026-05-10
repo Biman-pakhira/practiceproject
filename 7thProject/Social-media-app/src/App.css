@@ -1,0 +1,29 @@
+.navv{
+    background-color: rgba(240, 90, 34, 1);
+    height: 3rem;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navv h3{
+    position: absolute;
+    top: .2rem;
+    left: 1rem;
+    font-size: medium;
+}
+.navvb{
+    width: 20%;
+    height: 70%;
+    background-color: white;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 30px;
+    color:rgba(240, 90, 34, 1);
+    font-size: 15px;
+    align-items: center;
+}
+.iconn:hover{
+    transform: scale(1.5);
+}
