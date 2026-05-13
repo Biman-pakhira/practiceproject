@@ -1,40 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Box from './Components/Box'
-import { useState,useEffect } from 'react'
-import axios from 'axios';
-const App = () => {
-  const [title,setTitle] = useState("");
-  const [descpt,setDescpt] = useState("");
-  const [taskList, setTaskList] = useState([]);
-  useEffect(() => {
-    axios.get("http://localhost:3000/post")
-    .then(response=>setTaskList(response.data.message))
-    console.log(taskList);
-    
-  }, [])
-  
- const submitt=(e)=>{
-  e.preventDefault();
-  setTaskList([...taskList,{
-    name: title,
-    description: descpt
-  }])
-  setDescpt("");
-  setTitle("");
- }
+import './App.css'
+import data from "./data/data.json"
 
- const deletee = (id) =>{
-    setTaskList(taskList.filter((_,index)=> id!=index))
- }
+import { useEffect } from 'react'
+const App = () => {
+  let[i,setI]=useState(0);
+  
+        useEffect(() => {
+      const interv = setInterval(async() => {
+        setI((e)=>{
+        console.log(e);
+        if(e > data.length-2){
+           return 0
+          }else return e+1;
+      })
+      }, 500);
+        return () => clearInterval(interv);
+      }, [])
+      
   return (
     <div>
-      <form onSubmit={submitt}>
-        <input type="text" placeholder='Add Your Task-Name here' value={title} onChange={(e)=>setTitle(e.target.value)}/>
-        <input type="text" placeholder='Add Your Task-Dricption here' value={descpt} onChange={(e)=>setDescpt(e.target.value)}/>
-        <button type="submit">+Add</button>
-      </form>
-      {taskList.map((user, id)=> <Box key={user._id} id = {user._id} name={user.name} description={user.description} deleted={deletee}/>)}
+
+      <Box id={i}/>
     </div>
   )
 }
+
 export default App

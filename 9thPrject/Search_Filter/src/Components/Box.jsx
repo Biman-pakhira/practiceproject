@@ -1,16 +1,12 @@
 import React from 'react'
-
-
-const Box = ({id, name,description, deleted}) => {
-  console.log(id);
+import data from "../data/data.json"
+const Box = ({id}) => {
   return (
     <div>
-      <h1>{name}</h1>
-      <h5>{description}</h5>
-      <button onClick={()=> deleted(id)}>delete</button>
-      
-      
+    
+      <img style={{width:"100vw", height: "100vh", objectFit:"cover"}} src={data[id].profileImage} alt="img" srcSet={data[id].profileImage} />
     </div>
+
   )
 }
 
