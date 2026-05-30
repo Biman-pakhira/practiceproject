@@ -1,0 +1,23 @@
+#singlecard{
+    background-color: antiquewhite;
+    box-shadow: 0 0 10px black;
+    height: 400px;
+    width: 20%;
+    border-radius: 1em;
+    border: 1px solid black;
+    padding: 10px;
+    flex-shrink: 0;
+    
+}
+#imgd, img{
+    
+    width: 100%;
+    border-radius: 1em ;
+}
+#imgd{
+    height: 70%;
+}
+img{
+    height: 100%;
+    object-fit: cover;
+}
