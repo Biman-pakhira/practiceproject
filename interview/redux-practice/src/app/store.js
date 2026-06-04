@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterSlice from '../features/counterSlice'
+import searchSlice from '../app/features/search'
 export const store = configureStore({
     reducer:{
-        counter: counterSlice
+        slice: searchSlice
     }
 })
