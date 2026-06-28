@@ -1,28 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-import { useDispatch, useSelector } from 'react-redux'
-import {increase, deletee} from './redux/features/counterSlice'
+import { useState } from "react";
+import "./App.css";
+import { useDispatch, useSelector } from "react-redux";
+import { increase, deletee } from "./redux/features/counterSlice";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Card from "./components/Card";
+import data from "./data/data";
+import { Route, Routes } from "react-router-dom";
+import Start from "./components/Start";
+
 function App() {
   const [count, setCount] = useState("");
-  const cnt = useSelector((s)=>s.value);
+  const cnt = useSelector((s) => s.value);
   const dispatch = useDispatch();
-  console.log(cnt)
+  console.log(cnt);
+
   return (
     <>
-    <input type="text" value={count} onChange={e=>setCount(e.target.value)}/>
-    <button onClick={()=>dispatch(increase(count))}>+Add Task</button>
-    {cnt.chker?(cnt.task.map((us, idx)=>(
-      <div key={idx}>
-        <h1>{us.list}</h1>
-        <button onClick={()=>dispatch(deletee(us.id))}>Delete</button>
+      <div
+        style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 100,
+          backgroundColor: "blue",
+        }}
+      >
+        <Header />
       </div>
-    ))):(<h1>Nothing found</h1>)}
-    
+      <Routes>
+        <Route path="/" element={<Start />} />
+        <Route
+          path="/comp"
+          element={
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                padding: "10px",
+                justifyContent: "space-evenly",
+              }}
+            >
+              {data.map((e, idx) => (
+                <Card
+                  key={idx}
+                  name={e.name}
+                  power={e.power}
+                  rating={e.rating}
+                  speciality={e.speciality}
+                  img={e.img}
+                />
+              ))}
+            </div>
+          }
+        />
+      </Routes>
+
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
