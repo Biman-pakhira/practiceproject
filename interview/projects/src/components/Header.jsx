@@ -11,7 +11,7 @@ const Header = () => {
         <Link to="/cart">
           <p>Cart</p>
         </Link>
-        <p>Account</p>
+        <Link to='/account'>Account</Link>
       </div>
     </div>
   );
